@@ -7,9 +7,27 @@ import java.util.Scanner;
 
 public class Player
 {
-  /* your code here - attributes */
+  private String name;
+  private int points;
+  
+  public Player()
+  {
+    points = 0;
 
-  /* your code here - constructor(s) */ 
+    System.out.println("Enter Player Name:");
+    Scanner sc = new Scanner(System.in);
+    name = sc.nextLine(); //skipping error handling for user input
+    sc.close();
+
+    System.out.println("Hello and welcome to the game, " + name);
+  }
+
+  public Player(String inputName)
+  {
+    points = 0;
+    name = inputName;
+    System.out.println("Hello and welcome to the game, " + name);
+  }
 
   /* your code here - accessor(s) */ 
 
