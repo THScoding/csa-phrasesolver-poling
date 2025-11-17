@@ -53,23 +53,29 @@ public class  PhraseSolver
         currentPlayer.addPoints(letterVal * game.guessLetter(guess));
         boardStatus= game.getSolvedPhrase();
         solved = game.isSolved(boardStatus); //check if puzzle is complete
-        System.out.println("\n" + boardStatus + "\n");
+        System.out.println("\n" + boardStatus); //Display current game board
 
       } else { //assume player is guessing the whole phrase
         solved = game.isSolved(guess);
-        currentPlayer.addPoints(solveBonus);
+        if (solved) {
+            currentPlayer.addPoints(solveBonus);
+        } else {
+            System.out.println("\nSorry, that's not the correct phrase.\n");
+            continue;
+        }
       }
       
-      // Show current game board status, and player points
-      System.out.println("Scores: \n" + player1.getName() + " : " + player1.getPoints());
+      // Show scores
+      System.out.println("\nScores: \n" + player1.getName() + " : " + player1.getPoints());
       System.out.println(player2.getName() + " : " + player2.getPoints());
 
     } //end of while (!solved) loop
 
     //Print final game result
-    System.out.println("\nNice job, " + currentPlayer.getName() + "!  You solved the puzzzle. That's earns you a points bonus of " + solveBonus);
+    System.out.println("\n************************\n");
+    System.out.println("\nNice job, " + currentPlayer.getName() + "!  You solved the puzzzle. That earns you a points bonus of " + solveBonus);
     String winnerName = player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
-    System.out.println("\nCongratulations, " + winnerName +"!  You won, with the most points:\n");
+    System.out.println("\nCongratulations, " + winnerName +"!  You won, with the most points\n");
     
     sc.close();
   } //end of play
