@@ -6,7 +6,7 @@ public class  PhraseSolver
   private Player player2;
   private Board game;
   private boolean solved;
-  private final int solveBonus = 1000;
+  private int solveBonus;
 
   public PhraseSolver() 
   {
@@ -19,19 +19,18 @@ public class  PhraseSolver
   public void play()
   {
     int guesses = 0;
+    solveBonus = 100 * game.getPhrase().length();
+    System.out.println("\n========================\n");
+    System.out.println("You earn a bonus of " + solveBonus + " for solving the phrase early");    
     Player currentPlayer = player1;
     Scanner sc = new Scanner(System.in);
     String boardStatus = game.getSolvedPhrase();
+    System.out.println("\n" + boardStatus + "\n");
 
     while (!solved) 
     { 
-      guesses++; //
+      guesses++; 
 
-      // Show current game board status, and player points
-      System.out.println(boardStatus);
-      System.out.println("Scores: \n" + player1.getName() + " : " + player1.getPoints());
-      System.out.println(player2.getName() + " : " + player2.getPoints());
-      
       //Set & display current letter bounty
       game.setLetterValue();
       int letterVal = game.getLetterValue();
@@ -45,27 +44,34 @@ public class  PhraseSolver
         currentPlayer = player2;      
       }
       
-      System.out.println(currentPlayer.getName() + " guess a letter: ");
+      System.out.println(currentPlayer.getName() + " guess a letter (or the whole phrase): ");
       String guess = sc.nextLine();
 
       if (guess.length() == 1) //Is player guessing a letter, or the whole phrase?
       {
         //Add points per occurence of letter in phrase; My guessLetter returns count of letter guessed
         currentPlayer.addPoints(letterVal * game.guessLetter(guess));
-        solved = game.isSolved(game.getSolvedPhrase()); //check if puzzle is complete
+        boardStatus= game.getSolvedPhrase();
+        solved = game.isSolved(boardStatus); //check if puzzle is complete
+        System.out.println("\n" + boardStatus + "\n");
+
       } else { //assume player is guessing the whole phrase
         solved = game.isSolved(guess);
         currentPlayer.addPoints(solveBonus);
       }
-      boardStatus = game.getSolvedPhrase();
+      
+      // Show current game board status, and player points
+      System.out.println("Scores: \n" + player1.getName() + " : " + player1.getPoints());
+      System.out.println(player2.getName() + " : " + player2.getPoints());
 
     } //end of while (!solved) loop
-    sc.close();
 
-    //Print final game result, scores
+    //Print final game result
     System.out.println("\nNice job, " + currentPlayer.getName() + "!  You solved the puzzzle. That's earns you a points bonus of " + solveBonus);
     String winnerName = player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
-    System.out.println("\nCongratulations, " + winnerName +"!  You won, with the most points.\n");
+    System.out.println("\nCongratulations, " + winnerName +"!  You won, with the most points:\n");
+    
+    sc.close();
   } //end of play
   
 }

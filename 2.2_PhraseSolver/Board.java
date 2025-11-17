@@ -12,7 +12,6 @@ public class  Board
     solvedPhrase = "";
     phrase = loadPhrase();
     setLetterValue();
-    System.out.println("Phrase: " + phrase); //remove on final version
   }
 
   /* students create new accessor methods */
