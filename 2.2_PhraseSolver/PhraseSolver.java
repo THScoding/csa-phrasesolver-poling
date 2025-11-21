@@ -7,6 +7,7 @@ public class  PhraseSolver
   private Board game;
   private boolean solved;
   private int solveBonus;
+  private String remainingLetters = "a b c d e f g h i j k l m n o p q r s t u v w x y z ";
 
   public PhraseSolver() 
   {
@@ -30,6 +31,7 @@ public class  PhraseSolver
     while (!solved) 
     { 
       guesses++; 
+      System.out.println(remainingLetters + "\n");
 
       //Set & display current letter bounty
       game.setLetterValue();
@@ -44,13 +46,14 @@ public class  PhraseSolver
         currentPlayer = player2;      
       }
       
-      System.out.println(currentPlayer.getName() + " guess a letter (or the whole phrase): ");
+      System.out.println(currentPlayer.getName() + ", guess a letter (or the whole phrase): ");
       String guess = sc.nextLine();
 
       if (guess.length() == 1) //Is player guessing a letter, or the whole phrase?
       {
+        remainingLetters = remainingLetters.replaceFirst(guess + " ", "");
         //Add points per occurence of letter in phrase; My guessLetter returns count of letter guessed
-        currentPlayer.addPoints(letterVal * game.guessLetter(guess));
+        currentPlayer.addPoints(letterVal * game.guessLetter(guess.toLowerCase()));
         boardStatus= game.getSolvedPhrase();
         solved = game.isSolved(boardStatus); //check if puzzle is complete
         System.out.println("\n" + boardStatus); //Display current game board
