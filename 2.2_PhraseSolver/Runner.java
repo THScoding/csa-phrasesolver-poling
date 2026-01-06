@@ -9,6 +9,7 @@ public class Runner
   {
     System.out.println("\n========================\n");
     //Nicholas T: Printing a welcome message to the game
+    System.out.println("Welcome to the phrase solver game, find a friend and compete to find the phrase!");
 
 
     //TODO: Add a game loop: Keep looping, querying user if they want to quit; end loop if so
