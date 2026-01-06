@@ -94,9 +94,14 @@ public class  PhraseSolver
     System.out.println("\n************************\n");
     System.out.println("\nNice job, " + currentPlayer.getName() + "!  You solved the puzzle. That earned you a points bonus of " + solveBonus);
     
-    //In progress
-    String winnerName = player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
-    
+    //Assigns winner name from points
+    String winnerName;
+    if(player1.getPoints() > player2.getPoints()) {
+      winnerName = player1.getName();
+    } else {
+      winnerName = player2.getName();
+    }
+
     System.out.println("\nCongratulations, " + winnerName +"!  You won, with the most points\n");
     
     sc.close();
