@@ -67,18 +67,31 @@ public class  Board
 
   /**
    * TODO: Add explanation (Javadoc) text for the loadPhrase method
+<<<<<<< HEAD
    * @param phrasesFilename is a file with phrases to load, one line at a time
    * @return One random line from provided phrasesFilename File
+=======
+   * 
+   * @param
+   * @return
+>>>>>>> d0efb3d (added randon change)
    */
   private String loadPhrase(String phrasesFilename) {
     String selectedPhrase = "";
     int numOfLines = 0;
 
+<<<<<<< HEAD
     //TODO: Add comment explaining what this first try/catch does
     //Tries to load the file provided, and parese it, catching exceptions if the file is not found.
     try 
     {
       //TODO: Resolve unclosed Scanner: Replace this try/catch with try-with-resources (Google it)
+=======
+    // TODO: Add comment explaining what this first try/catch does
+    try {
+      // TODO: Resolve unclosed Scanner: Replace this try/catch with
+      // try-with-resources (Google it)
+>>>>>>> d0efb3d (added randon change)
       Scanner sc = new Scanner(new File(phrasesFilename));
       while (sc.hasNextLine()) {
         sc.nextLine();
@@ -180,4 +193,5 @@ public class  Board
     return foundLetterCount;
   }
 
+  int asdf;
 }
