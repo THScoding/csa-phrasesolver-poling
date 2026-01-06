@@ -162,6 +162,7 @@ public class  Board
     }
 
     // TODO: Add commenting explaining intent of this check:
+    // checks to ensure the index of the phrase compared to the guess is less than zero, so it doesn't find any matches for the guess in the phrase.
     if (this.phrase.indexOf(guess) < 0) {
       // TODO: Print a message to the players explaning what happened with their guess
       return 0;
