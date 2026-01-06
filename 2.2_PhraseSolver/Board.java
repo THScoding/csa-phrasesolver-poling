@@ -139,7 +139,6 @@ public class Board {
 
     return selectedPhrase;
   }
-                                                                                                                                                                                                                                                                              //easter egg 🥚 
   /**
    * Update solvedPhrase by replacing underscore with the guessed letter, for each
    * position it appears in the phrase.
@@ -190,6 +189,3 @@ public class Board {
 
   int asdf;
 }
-
-
-//easter egg 🥚
