@@ -106,6 +106,10 @@ public class  PhraseSolver
 =======
     //TODO: Replace the following with an if/else, for easier readability - joel mulonde
     String winnerName = player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
+    String winnerName; 
+    if (player1.getPoints() > player2.getPoints()) {
+      player1.getName()
+    }
     
 >>>>>>> 070c9d2 (claimed todo)
     System.out.println("\nCongratulations, " + winnerName +"!  You won, with the most points\n");
