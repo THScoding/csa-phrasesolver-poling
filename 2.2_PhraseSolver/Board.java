@@ -128,6 +128,9 @@ public class Board {
     }
 
     // TODO: Explain intent of this for loop (Also: why the extra spaces?)
+    //The loop creates a hidden version of the phrase. 
+    // It keeps spaces visible and replaces letters with underscores. 
+    //spaces are added so the phrase is easier to read when printed.
     for (int i = 0; i < selectedPhrase.length(); i++) {
       String currentChar = selectedPhrase.substring(i, i + 1);
       if (currentChar.equals(" ")) {
@@ -139,6 +142,7 @@ public class Board {
 
     return selectedPhrase;
   }
+
   /**
    * Update solvedPhrase by replacing underscore with the guessed letter, for each
    * position it appears in the phrase.
@@ -154,7 +158,8 @@ public class Board {
     }
 
     // TODO: Add commenting explaining intent of this check:
-    //intent of this check is to check whether the guessed letter is in the phrase, and to return 0 if it isn't.
+    // intent of this check is to check whether the guessed letter is in the phrase,
+    // and to return 0 if it isn't.
     if (this.phrase.indexOf(guess) < 0) {
       // TODO: Print a message to the players explaning what happened with their
       // guess. THIS IS DONE
