@@ -137,8 +137,14 @@ public class  Board
    */
   public int guessLetter(String guess) {
     // Skip processing if letter was already guessed (or if guess is a space)
-    if (solvedPhrase.indexOf(guess) >= 0) {
-      // TODO: Print a message to the players explaning why guess was ignored
+    if (solvedPhrase.indexOf(guess) >= 0)  
+    {
+      if (guess.equals(" ")) {
+        System.out.println("Your guess was ignored becuase you cannot geuss a space");
+      }
+      else {
+      System.out.println("Your guess was ignorded becuase " + guess + "was already geussed or was a space");
+      }
       return 0;
     }
 
