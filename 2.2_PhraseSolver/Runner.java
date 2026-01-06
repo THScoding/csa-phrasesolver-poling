@@ -8,7 +8,7 @@ public class Runner
   public static void main(String[] args) 
   {
     System.out.println("\n========================\n");
-    //TODO: Print a welcome message to the game
+    //Nicholas T: Printing a welcome message to the game
 
 
     //TODO: Add a game loop: Keep looping, querying user if they want to quit; end loop if so
