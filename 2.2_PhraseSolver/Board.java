@@ -95,7 +95,7 @@ public class Board {
     try (Scanner sc = new Scanner(new File(phrasesFilename))) {
       int lineNumber = 0;
 
-      // Read through the file one line at a time
+      // Read through the file one line at a time.
       while (sc.hasNextLine()) {
         lineNumber++;
 
