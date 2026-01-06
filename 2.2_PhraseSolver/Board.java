@@ -32,7 +32,6 @@ public class Board {
     return currentLetterValue;
   }
 
-  // TODO: Add Javadoc explaining intent of this method
   /** 
    * This method sets the point value of the current letter if guessed correctly, assigning it to currentLetterValue
   */
@@ -47,11 +46,8 @@ public class Board {
   }
 
   public boolean isSolution(String guess) {
-    // TODO: Replace the if/else with a single line return statement.
-    if (this.phrase.equals(guess.trim().toLowerCase())) {
-      return true;
-    }
-    return false;
+      
+    return this.phrase.equals(guess.trim().toLowerCase());
   }
 
   /**
