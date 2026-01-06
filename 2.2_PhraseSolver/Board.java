@@ -83,11 +83,7 @@ public class Board {
 
         // Pick a random line number
         int targetLineNumber = (int) ((Math.random() * numOfLines) + 1);
-
-<<<<<<< HEAD
         // Read the file again to select the target line
-=======
-<<<<<<< HEAD
 
   /**
    * Update solvedPhrase by replacing underscore with the guessed letter, for each
@@ -129,7 +125,6 @@ for (int i = 0; i < this.phrase.length(); i++) {
       if (currentLetter.equals("_")) {
         newSolvedPhrase += "_ ";
       } else {
-<<<<<<< HEAD
         // if there is a space on the template, then there is mirrored a space in the answer
         if (currentLetter.equals(" ")) {
           newSolvedPhrase += "  ";
@@ -140,9 +135,6 @@ for (int i = 0; i < this.phrase.length(); i++) {
           } else {
             newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";
           }
-=======
-        // Now, read the file again to select the target line
->>>>>>> 13aa3bf (FIxed issues with my previous commit)
         try (Scanner sc = new Scanner(new File(phrasesFilename))) {
             int lineNumber = 0;
             while (sc.hasNextLine()) {
@@ -169,17 +161,13 @@ for (int i = 0; i < this.phrase.length(); i++) {
         }
 
         return selectedPhrase;
-=======
         // Otherwise, keep the previously solved character
         // (each character in solvedPhrase is followed by a space,
         // so we multiply i by 2 to get the correct index)
         newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";
       }
->>>>>>> f925a66 (FIxed issues with my previous commit)
     }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
   }
 }
 // Update the solvedPhrase with the new version we built
@@ -189,11 +177,6 @@ return foundLetterCount;
 }
   int asdf;//getout
 }
-
-
-=======
->>>>>>> 13aa3bf (FIxed issues with my previous commit)
-
     /**
      * Updates solvedPhrase by revealing the guessed letter wherever it occurs.
      * 
