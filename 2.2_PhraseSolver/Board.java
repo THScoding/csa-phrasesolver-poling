@@ -1,6 +1,6 @@
-import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class  Board
 { 
@@ -70,8 +70,8 @@ public class  Board
 
   /**
    * TODO: Add explanation (Javadoc) text for the loadPhrase method
-   * @param
-   * @return
+   * @param phrasesFilename is a file with phrases to load, one line at a time
+   * @return One line from provided phrasesFilename File
    */
   private String loadPhrase(String phrasesFilename)
   {
