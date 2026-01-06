@@ -149,15 +149,13 @@ public class Board {
   public int guessLetter(String guess) {
     // Skip processing if letter was already guessed (or if guess is a space)
     if (solvedPhrase.indexOf(guess) >= 0) {
-      // TODO: Print a message to the players explaning why guess was ignored
+      System.out.println("this letter has already been guessed");
       return 0;
     }
 
-    // TODO: Add commenting explaining intent of this check:
+    // this check shows if the letter does not exist in the phrase.
     if (this.phrase.indexOf(guess) < 0) {
-      // TODO: Print a message to the players explaning what happened with their
-      // guess. THIS IS DONE
-      System.out.println("Your guess was invalid as it was not in the phrase");
+      System.out.println("your letter does not exist in the phrase");
       return 0;
     }
 
