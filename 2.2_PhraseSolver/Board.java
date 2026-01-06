@@ -53,10 +53,8 @@ public class Board {
   }
 
   /**
-   * Expects a String in the format of the solvedPhrase displayed to the user:
-   * Each letter has an extra space after it,
-   * and removes those spaces
-   * 
+   *  Expects a String in the format of the solvedPhrase displayed to the user: Each letter has an extra space after it,
+   *  and removes those spaces
    * @param guess
    * @return string with extra spaces removed
    */
