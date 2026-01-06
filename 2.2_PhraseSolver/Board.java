@@ -92,23 +92,34 @@ public class  Board
     
 	  int targetLineNumber = (int) ((Math.random() * numOfLines) + 1);
     
-    //TODO: Add comment explaining what this second try/catch does
-    try 
+    // This try/catch attempts to open the phrases file and read it line by line.
+// If the file cannot be found, it prevents the program from crashing and
+// instead prints a helpful error message.
+try (Scanner sc = new Scanner(new File(phrasesFilename))) 
+{
+    int lineNumber = 0;
+
+    // Read through the file one line at a time
+    while (sc.hasNextLine())
     {
-      int lineNumber=0;
-      //TODO: Resolve unclosed Scanner: Replace this try/catch with try-with-resources (Google it)
-      Scanner sc = new Scanner(new File(phrasesFilename));
-      while (sc.hasNextLine())
-      {
         lineNumber++;
-        // String method trim remove whitespace from beginning and end of string
+
+        // Remove leading/trailing whitespace from the line
         String currentLine = sc.nextLine();
+
+        // If this is the line we want, store it in lowercase
         if (lineNumber == targetLineNumber)
         {
-          selectedPhrase = currentLine.trim().toLowerCase();
+            selectedPhrase = currentLine.trim().toLowerCase();
         }
-      }
-    } catch(FileNotFoundException e) { System.out.println("Specified phrases file not found: " + phrasesFilename); }
+    }
+}
+// This catch runs if the file does not exist or cannot be opened.
+// It handles the error gracefully instead of crashing the program.
+catch (FileNotFoundException e)
+{
+    System.out.println("Specified phrases file not found: " + phrasesFilename);
+}
     
     //TODO: Explain intent of this for loop  (Also: why the extra spaces?)
     for (int i = 0; i < selectedPhrase.length(); i++)
