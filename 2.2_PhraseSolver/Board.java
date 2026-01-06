@@ -72,14 +72,12 @@ public class Board {
   private String loadPhrase(String phrasesFilename) {
     String selectedPhrase = "";
     int numOfLines = 0;
-
-<<<<<<< HEAD
     //TODO: Add comment explaining what this first try/catch does
     //Tries to load the file provided, and parese it, catching exceptions if the file is not found.
     try 
     {
       //TODO: Resolve unclosed Scanner: Replace this try/catch with try-with-resources (Google it)
-=======
+
     // TODO: Add comment explaining what this first try/catch does
     try {
       // TODO: Resolve unclosed Scanner: Replace this try/catch with
