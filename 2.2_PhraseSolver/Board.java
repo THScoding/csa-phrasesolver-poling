@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-// hello from jonas
+// hello from jonas ehehe
 public class  Board
 { 
   private String solvedPhrase;
