@@ -84,7 +84,65 @@ public class Board {
         // Pick a random line number
         int targetLineNumber = (int) ((Math.random() * numOfLines) + 1);
 
+<<<<<<< HEAD
         // Read the file again to select the target line
+=======
+<<<<<<< HEAD
+
+  /**
+   * Update solvedPhrase by replacing underscore with the guessed letter, for each
+   * position it appears in the phrase.
+   * 
+   * @return count of letter in phrase; Returns 0 if letter not found OR if letter
+   *         was already guessed
+   */
+  public int guessLetter(String guess) {
+    // Skip processing if letter was already guessed (or if guess is a space)
+    if (solvedPhrase.indexOf(guess) >= 0) {
+      System.out.println("this letter has already been guessed");
+      return 0;
+    }
+
+    
+    //intent of this check is to check whether the guessed letter is in the phrase, and to return 0 if it isn't.
+    if (this.phrase.indexOf(guess) < 0) {
+      System.out.println("Your guess was invalid as it was not in the phrase");
+      return 0;
+    }
+int foundLetterCount = 0;          // Counts how many times the guessed letter is found
+String newSolvedPhrase = "";       // Will build the updated solved phrase
+// This for loop goes through each character in the original phrase
+for (int i = 0; i < this.phrase.length(); i++) {
+  // Get the current letter from the phrase at position i
+  String currentLetter = this.phrase.substring(i, i + 1);
+  // Check if the current letter matches the guessed letter
+  if (currentLetter.equals(guess)) {
+    // If it matches, add the guessed letter to the solved phrase
+    newSolvedPhrase += guess + " ";
+    foundLetterCount++;           // Increase the count of found letters
+  } else {
+    // If the current character is a space, preserve the space
+    if (currentLetter.equals(" ")) {
+      newSolvedPhrase += "  ";
+    } else {
+      // If the character is an underscore, keep it as an underscore
+      if (currentLetter.equals("_")) {
+        newSolvedPhrase += "_ ";
+      } else {
+<<<<<<< HEAD
+        // if there is a space on the template, then there is mirrored a space in the answer
+        if (currentLetter.equals(" ")) {
+          newSolvedPhrase += "  ";
+        } else {
+          // return an underscore if there is no correct guessed letter for that place
+          if (currentLetter.equals("_")) {
+            newSolvedPhrase += "_ ";
+          } else {
+            newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";
+          }
+=======
+        // Now, read the file again to select the target line
+>>>>>>> 13aa3bf (FIxed issues with my previous commit)
         try (Scanner sc = new Scanner(new File(phrasesFilename))) {
             int lineNumber = 0;
             while (sc.hasNextLine()) {
@@ -111,7 +169,30 @@ public class Board {
         }
 
         return selectedPhrase;
+=======
+        // Otherwise, keep the previously solved character
+        // (each character in solvedPhrase is followed by a space,
+        // so we multiply i by 2 to get the correct index)
+        newSolvedPhrase += solvedPhrase.substring(i * 2, i * 2 + 1) + " ";
+      }
+>>>>>>> f925a66 (FIxed issues with my previous commit)
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  }
+}
+// Update the solvedPhrase with the new version we built
+solvedPhrase = newSolvedPhrase;
+// Return how many letters were found in this guess
+return foundLetterCount;
+}
+  int asdf;//getout
+}
+
+
+=======
+>>>>>>> 13aa3bf (FIxed issues with my previous commit)
 
     /**
      * Updates solvedPhrase by revealing the guessed letter wherever it occurs.
