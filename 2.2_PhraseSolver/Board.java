@@ -71,7 +71,7 @@ public class  Board
   /**
    * TODO: Add explanation (Javadoc) text for the loadPhrase method
    * @param phrasesFilename is a file with phrases to load, one line at a time
-   * @return One line from provided phrasesFilename File
+   * @return One random line from provided phrasesFilename File
    */
   private String loadPhrase(String phrasesFilename)
   {
@@ -79,6 +79,7 @@ public class  Board
     int numOfLines = 0;
 
     //TODO: Add comment explaining what this first try/catch does
+    //Tries to load the file provided, and parese it, catching exceptions if the file is not found.
     try 
     {
       //TODO: Resolve unclosed Scanner: Replace this try/catch with try-with-resources (Google it)
