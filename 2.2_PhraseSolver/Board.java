@@ -91,7 +91,6 @@ public class Board {
         sc.nextLine();
         numOfLines++;
       }
-      sc.close();
     } catch (FileNotFoundException e) {
       System.out.println("Specified phrases file not found: " + phrasesFilename);
     }

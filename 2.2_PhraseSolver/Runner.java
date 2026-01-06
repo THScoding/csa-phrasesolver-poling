@@ -35,7 +35,7 @@ public class Runner
         quit = true;
     }
 
-    sc.close();
     System.out.println("\nThanks for playing!");
+
   }
 }
