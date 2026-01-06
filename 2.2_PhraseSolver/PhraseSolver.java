@@ -98,7 +98,7 @@ public class  PhraseSolver
       winnerName = player2.getName();
     }
 
-    System.out.println("\nCongratulations, " + winnerName +"!  You won, with the most points\n");
+    System.out.println("\nCongratulations, " + winnerName +"!  You won with the most points! \n");
     
   } //end of play
   //random change//
