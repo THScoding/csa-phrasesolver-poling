@@ -15,7 +15,6 @@ public class  PhraseSolver
     player2 = new Player();
     game = new Board(defaultPhrasesFilename);
   }
-  //erranous change - lucca
   /**
    * Creates PhraseSolver (and thus Board) based on custom filename
    * NOTE: File must have:
