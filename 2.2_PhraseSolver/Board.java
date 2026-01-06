@@ -149,7 +149,7 @@ public class Board {
   public int guessLetter(String guess) {
     // Skip processing if letter was already guessed (or if guess is a space)
     if (solvedPhrase.indexOf(guess) >= 0) {
-      // TODO: Print a message to the players explaning why guess was ignored
+      System.out.println("this letter has already been guessed");
       return 0;
     }
 
