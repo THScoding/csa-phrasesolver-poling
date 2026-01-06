@@ -121,6 +121,8 @@ public class Board {
     catch (FileNotFoundException e) {
       System.out.println("Specified phrases file not found: " + phrasesFilename);
     }
+
+   
     //The loop creates a hidden version of the phrase. 
     // It keeps spaces visible and replaces letters with underscores. 
     //spaces are added so the phrase is easier to read when printed.
@@ -161,17 +163,18 @@ public class Board {
     // Now, construct the
     int foundLetterCount = 0;
     String newSolvedPhrase = "";
-    // TODO: Add comments to explain how this for loop works
+    // enters a correct letter into place and adds 1 to the found letter count 
     for (int i = 0; i < this.phrase.length(); i++) {
       String currentLetter = this.phrase.substring(i, i + 1);
       if (currentLetter.equals(guess)) {
         newSolvedPhrase += guess + " ";
         foundLetterCount++;
       } else {
+        // if there is a space on the template, then there is mirrored a space in the answer
         if (currentLetter.equals(" ")) {
           newSolvedPhrase += "  ";
         } else {
-          // return an underscore
+          // return an underscore if there is no correct guessed letter for that place
           if (currentLetter.equals("_")) {
             newSolvedPhrase += "_ ";
           } else {
@@ -184,6 +187,6 @@ public class Board {
     return foundLetterCount;
   }
 
-  int asdf;
+  int asdf;//getout
 }
 
