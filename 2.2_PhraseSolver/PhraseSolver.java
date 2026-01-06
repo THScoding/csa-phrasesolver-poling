@@ -17,9 +17,10 @@ public class  PhraseSolver
   }
   //erranous change - lucca
   /**
-   * Creates Phrasesolver (and thus Board) based on custom filename
+   * Creates PhraseSolver (and thus Board) based on custom filename
    * NOTE: File must have:
    *    > 1 phrase per line
+   *    > sixty seven
    *    > only letters a-z, no other characters (comma, apostrophe, hyphen, etc)
    * @param phrasesFilename
    */
