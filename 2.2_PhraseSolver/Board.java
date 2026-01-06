@@ -84,7 +84,6 @@ public class Board {
     try {
       // TODO: Resolve unclosed Scanner: Replace this try/catch with
       // try-with-resources (Google it)
->>>>>>> d0efb3d (added randon change)
       Scanner sc = new Scanner(new File(phrasesFilename));
       while (sc.hasNextLine()) {
         sc.nextLine();
