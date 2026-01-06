@@ -94,7 +94,7 @@ public class  PhraseSolver
     System.out.println("\n************************\n");
     System.out.println("\nNice job, " + currentPlayer.getName() + "!  You solved the puzzle. That earned you a points bonus of " + solveBonus);
     
-    //TODO: Replace the following with an if/else, for easier readability
+    //In progress
     String winnerName = player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
     
     System.out.println("\nCongratulations, " + winnerName +"!  You won, with the most points\n");
