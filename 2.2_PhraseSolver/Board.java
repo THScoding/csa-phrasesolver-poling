@@ -1,9 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-// hello from jonas ehehe
-public class  Board
-{ 
+
+public class Board {
   private String solvedPhrase;
   private String phrase;
   private int currentLetterValue;
@@ -33,11 +32,9 @@ public class  Board
     return currentLetterValue;
   }
 
-  //TODO: Add Javadoc explaining intent of this method
-  /** This method sets the point value of the current letter if guessed correctly, assigning it to currentLetterValue*/
-  public void setLetterValue()
-  {
-    int randomInt = (int) ((Math.random() * 10) + 1) * 100;    
+  // TODO: Add Javadoc explaining intent of this method
+  public void setLetterValue() {
+    int randomInt = (int) ((Math.random() * 10) + 1) * 100;
     currentLetterValue = randomInt;
   }
 
@@ -54,8 +51,10 @@ public class  Board
   }
 
   /**
-   *  Expects a String in the format of the solvedPhrase displayed to the user: Each letter has an extra space after it,
-   *  and removes those spaces
+   * Expects a String in the format of the solvedPhrase displayed to the user:
+   * Each letter has an extra space after it,
+   * and removes those spaces
+   * 
    * @param guess
    * @return string with extra spaces removed
    */
@@ -109,7 +108,7 @@ public class  Board
     try (Scanner sc = new Scanner(new File(phrasesFilename))) {
       int lineNumber = 0;
 
-      // Read through the file one line at a time.
+      // Read through the file one line at a time
       while (sc.hasNextLine()) {
         lineNumber++;
 
@@ -150,21 +149,16 @@ public class  Board
    */
   public int guessLetter(String guess) {
     // Skip processing if letter was already guessed (or if guess is a space)
-    if (solvedPhrase.indexOf(guess) >= 0)  
-    {
-      if (guess.equals(" ")) {
-        System.out.println("Your guess was ignored becuase you cannot geuss a space");
-      }
-      else {
-      System.out.println("Your guess was ignorded becuase " + guess + "was already geussed or was a space");
-      }
+    if (solvedPhrase.indexOf(guess) >= 0) {
+      // TODO: Print a message to the players explaning why guess was ignored
       return 0;
     }
 
     // TODO: Add commenting explaining intent of this check:
-    // checks to ensure the index of the phrase compared to the guess is less than zero, so it doesn't find any matches for the guess in the phrase.
     if (this.phrase.indexOf(guess) < 0) {
-      // TODO: Print a message to the players explaning what happened with their guess
+      // TODO: Print a message to the players explaning what happened with their
+      // guess. THIS IS DONE
+      System.out.println("Your guess was invalid as it was not in the phrase");
       return 0;
     }
 
