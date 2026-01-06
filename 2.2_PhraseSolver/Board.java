@@ -1,8 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
-public class Board {
+// hello from jonas
+public class  Board
+{ 
   private String solvedPhrase;
   private String phrase;
   private int currentLetterValue;
