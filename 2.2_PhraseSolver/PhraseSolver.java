@@ -105,10 +105,11 @@ public class  PhraseSolver
 
 =======
     //TODO: Replace the following with an if/else, for easier readability - joel mulonde
-    String winnerName = player1.getPoints() > player2.getPoints() ? player1.getName() : player2.getName();
     String winnerName; 
     if (player1.getPoints() > player2.getPoints()) {
-      player1.getName()
+      winnerName = player1.getName();
+    } else {
+      winnerName = player2.getName();
     }
     
 >>>>>>> 070c9d2 (claimed todo)
