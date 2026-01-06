@@ -33,6 +33,10 @@ public class Board {
   }
 
   // TODO: Add Javadoc explaining intent of this method
+  /** 
+   * This method sets the point value of the current letter if guessed correctly, assigning it to currentLetterValue
+  */
+
   public void setLetterValue() {
     int randomInt = (int) ((Math.random() * 10) + 1) * 100;
     currentLetterValue = randomInt;
