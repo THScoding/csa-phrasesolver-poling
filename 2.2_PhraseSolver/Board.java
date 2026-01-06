@@ -139,6 +139,7 @@ public class Board {
     return selectedPhrase;}finally{}
   }
 
+
   /**
    * Update solvedPhrase by replacing underscore with the guessed letter, for each
    * position it appears in the phrase.
@@ -153,12 +154,9 @@ public class Board {
       return 0;
     }
 
-    // TODO: Add commenting explaining intent of this check:
-    // intent of this check is to check whether the guessed letter is in the phrase,
-    // and to return 0 if it isn't.
+    
+    //intent of this check is to check whether the guessed letter is in the phrase, and to return 0 if it isn't.
     if (this.phrase.indexOf(guess) < 0) {
-      // TODO: Print a message to the players explaning what happened with their
-      // guess. THIS IS DONE
       System.out.println("Your guess was invalid as it was not in the phrase");
       return 0;
     }
@@ -191,3 +189,4 @@ public class Board {
 
   int asdf;
 }
+
