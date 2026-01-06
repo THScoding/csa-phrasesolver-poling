@@ -70,7 +70,6 @@ public class Board {
   }
 
   /**
-   * TODO: Add explanation (Javadoc) text for the loadPhrase method
    * @param phrasesFilename is a file with phrases to load, one line at a time
    * @return One random line from provided phrasesFilename File
    */
