@@ -122,8 +122,6 @@ public class Board {
     catch (FileNotFoundException e) {
       System.out.println("Specified phrases file not found: " + phrasesFilename);
     }
-
-    // TODO: Explain intent of this for loop (Also: why the extra spaces?)
     //The loop creates a hidden version of the phrase. 
     // It keeps spaces visible and replaces letters with underscores. 
     //spaces are added so the phrase is easier to read when printed.
