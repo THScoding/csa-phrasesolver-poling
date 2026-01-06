@@ -14,8 +14,6 @@ public class Player
     name = newName;
     System.out.println("Hello and welcome to the game, " + name);
     points = 0;
-
-    sc.close();
   }
 
   public Player(String inputName)
