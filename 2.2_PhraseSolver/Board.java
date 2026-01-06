@@ -158,7 +158,6 @@ public class Board {
       System.out.println("Your guess was invalid as it was not in the phrase");
       return 0;
     }
-
     // Now, construct the
     int foundLetterCount = 0;
     String newSolvedPhrase = "";
@@ -182,10 +181,9 @@ public class Board {
         }
       }
     }
-    solvedPhrase = newSolvedPhrase;
-    return foundLetterCount;
   }
 
   int asdf;//getout
 }
+
 
