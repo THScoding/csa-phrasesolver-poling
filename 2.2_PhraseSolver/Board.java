@@ -9,10 +9,15 @@ public class Board {
 
     /**
      * Creates Board based on custom filename
+     * NOTE: file must have:
+     * > 1 phrase per line
+     * > only letters a-z, no other characters (comma, apostrophe, hyphen, etc)
+     * 
+     * @param phrasesFilename file containing phrases, one per line
      */
     public Board(String phrasesFilename) {
         solvedPhrase = "";
-        phrase = loadPhrase(phrasesFilename);
+        this.phrase = loadPhrase(phrasesFilename);
     }
 
     public String getPhrase() {
